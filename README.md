@@ -87,24 +87,6 @@ This command will start a temporary local web server and automatically open the 
 
 ---
 
-## 🔍 Troubleshooting
-
-### Problem: Empty Report (No `@Step` details)
-**Cause:** Allure was not correctly injected into the test process via AspectJ.
-**Solution:** This project uses the "agent copy" method. Ensure your `pom.xml` contains the `maven-dependency-plugin` configuration (to copy `aspectjweaver.jar`) and that `maven-surefire-plugin` points to that file in the `target` directory.
-
-### Problem: `SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder"`
-**Cause:** Version conflict between Allure/OpenAPI and newer SLF4J versions.
-**Solution:** We use the stable `slf4j-simple:1.7.36`. Do not upgrade this dependency to version 2.x unless the Allure/OpenAPI libraries are updated to support the new ServiceLoader mechanism.
-
-### Problem: IDE shows red code
-**Cause:** The IDE does not recognize generated sources or libraries.
-**Solution:**
-1.  Right-click `pom.xml` -> **Maven** -> **Reload Project**.
-2.  If the issue persists, mark the `src/gen/java/main` folder as **Generated Sources Root** (Right-click folder -> Mark Directory as...).
-
----
-
 ## 📦 Directory Structure
 
 ```text

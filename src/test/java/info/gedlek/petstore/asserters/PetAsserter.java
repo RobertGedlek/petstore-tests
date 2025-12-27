@@ -1,9 +1,9 @@
-package com.example.petstore.asserters;
+package info.gedlek.petstore.asserters;
 
-import com.example.petstore.model.Category;
-import com.example.petstore.model.Pet;
-import com.example.petstore.model.Pet.StatusEnum;
-import com.example.petstore.model.Tag;
+import info.gedlek.petstore.model.Category;
+import info.gedlek.petstore.model.Pet;
+import info.gedlek.petstore.model.Pet.StatusEnum;
+import info.gedlek.petstore.model.Tag;
 import io.qameta.allure.Step;
 import lombok.extern.slf4j.Slf4j;
 import org.assertj.core.api.AbstractAssert;

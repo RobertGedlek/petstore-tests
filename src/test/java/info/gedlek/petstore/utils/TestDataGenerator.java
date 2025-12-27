@@ -1,6 +1,6 @@
-package com.example.petstore.utils;
+package info.gedlek.petstore.utils;
 
-import com.example.petstore.model.Pet;
+import info.gedlek.petstore.model.Pet;
 import com.github.javafaker.Faker;
 import lombok.Getter;
 

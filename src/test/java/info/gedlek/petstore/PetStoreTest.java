@@ -1,12 +1,12 @@
-package com.example.petstore;
+package info.gedlek.petstore;
 
-import com.example.petstore.utils.TestDataGenerator;
-import com.example.petstore.model.Pet;
-import com.example.petstore.service.PetStoreService;
+import info.gedlek.petstore.utils.TestDataGenerator;
+import info.gedlek.petstore.model.Pet;
+import info.gedlek.petstore.service.PetStoreService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static com.example.petstore.asserters.PetAsserter.assertThat;
+import static info.gedlek.petstore.asserters.PetAsserter.assertThat;
 
 public class PetStoreTest {
 

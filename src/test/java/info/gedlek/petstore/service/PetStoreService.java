@@ -1,10 +1,10 @@
-package com.example.petstore.service;
+package info.gedlek.petstore.service;
 
-import com.example.petstore.api.PetApi;
-import com.example.petstore.invoker.ApiClient;
-import com.example.petstore.invoker.ApiException;
-import com.example.petstore.invoker.ApiResponse;
-import com.example.petstore.model.Pet;
+import info.gedlek.petstore.api.PetApi;
+import info.gedlek.petstore.invoker.ApiClient;
+import info.gedlek.petstore.invoker.ApiException;
+import info.gedlek.petstore.invoker.ApiResponse;
+import info.gedlek.petstore.model.Pet;
 import io.qameta.allure.Step;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;

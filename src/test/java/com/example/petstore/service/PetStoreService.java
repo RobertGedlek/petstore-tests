@@ -27,7 +27,7 @@ public class PetStoreService {
         Logger httpLogger = LoggerFactory.getLogger("HTTP-TRAFFIC");
 
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor(message -> {
-            httpLogger.info(message); // Tu następuje przekierowanie do Logbacka
+            httpLogger.info(message);
         });
         logging.setLevel(HttpLoggingInterceptor.Level.BODY);
 

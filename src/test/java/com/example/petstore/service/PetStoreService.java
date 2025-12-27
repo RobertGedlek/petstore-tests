@@ -1,10 +1,15 @@
 package com.example.petstore.service;
 
 import com.example.petstore.api.PetApi;
+import com.example.petstore.invoker.ApiClient;
 import com.example.petstore.invoker.ApiException;
 import com.example.petstore.invoker.ApiResponse;
 import com.example.petstore.model.Pet;
 import io.qameta.allure.Step;
+import okhttp3.OkHttpClient;
+import okhttp3.logging.HttpLoggingInterceptor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
@@ -19,7 +24,22 @@ public class PetStoreService {
     private final PetApi petApi;
 
     public PetStoreService() {
-        this.petApi = new PetApi();
+        Logger httpLogger = LoggerFactory.getLogger("HTTP-TRAFFIC");
+
+        HttpLoggingInterceptor logging = new HttpLoggingInterceptor(message -> {
+            httpLogger.info(message); // Tu następuje przekierowanie do Logbacka
+        });
+        logging.setLevel(HttpLoggingInterceptor.Level.BODY);
+
+        var client = new OkHttpClient.Builder()
+                .addInterceptor(logging)
+                .build();
+
+        var apiClient = new ApiClient();
+        apiClient.setHttpClient(client);
+        apiClient.setBasePath("https://petstore.swagger.io/v2");
+
+        this.petApi = new PetApi(apiClient);
     }
 
     /**
